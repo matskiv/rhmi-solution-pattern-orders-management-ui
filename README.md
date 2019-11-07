@@ -1,4 +1,4 @@
-# RHMI RHTE Lab No. 1 Order Management UI
+# RHMI Solution Pattern No. 1 Fuse Service
 
 ## Purpose
 
