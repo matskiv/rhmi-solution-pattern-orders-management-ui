@@ -21,6 +21,23 @@ npm run start:dev
 
 You can now access the application on http://localhost:8080
 
+## Development Deployment 
+
+Use `npm run openshift` to easily deploy this application on OpenShift.
+
+## Build an Image
+
+[source-to-image (s2i)](https://docs.okd.io/latest/creating_images/s2i.html) is
+used to generate builds.
+
+The commands are as follows once you have Docker and s2i installed:
+
+```bash
+export CONTAINER_NAME=rhmi-lab-order-management-ui
+docker pull registry.access.redhat.com/ubi8/nodejs-10
+s2i build . --context-dir=frontend/ registry.access.redhat.com/ubi8/nodejs-10 $CONTAINER_NAME
+```
+
 ## Applying Keycloak / Red Hat SSO Protection
 
 Start the server with the `KEYCLOAK_CONFIG` environment variable set to a valid
@@ -46,9 +63,3 @@ If you need a Keycloak instance locally try the following:
 1. Choose *User > Credentials* and assign a password to the user
 1. Choose *User > Role Mappings* and select your *Client* from the *Client Roles* dropdown.
 1. Assign the `staff` role.
-
-## Deployment
-
-To deploy to an OpenShift cluster you're logged into use `npm run openshift`.
-
-An image is also available for use from quay.io/evanshortiss/rhmi-lab-order-management-ui:latest
