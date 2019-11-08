@@ -35,7 +35,7 @@ The commands are as follows once you have Docker and s2i installed:
 ```bash
 export CONTAINER_NAME=rhmi-lab-order-management-ui
 docker pull registry.access.redhat.com/ubi8/nodejs-10
-s2i build . --context-dir=frontend/ registry.access.redhat.com/ubi8/nodejs-10 $CONTAINER_NAME
+s2i build . registry.access.redhat.com/ubi8/nodejs-10 $CONTAINER_NAME
 ```
 
 ## Applying Keycloak / Red Hat SSO Protection
