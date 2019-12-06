@@ -1,5 +1,5 @@
 {
-  "name": "rhmi-solution-pattern-order-management-ui",
+  "name": "rhmi-solution-pattern-orders-management-ui",
   "version": "1.0.0",
   "description": "The UI used in RHMI Solution Patterns to manage orders",
   "main": "index.js",
@@ -9,7 +9,7 @@
     "lint": "standard --fix app.js lib/*.js",
     "build": "npm run copy:patternfly-assets",
     "openshift": "nodeshift --strictSSL=false --nodeVersion=10.x",
-    "copy:patternfly-assets": "cp -R node_modules/@patternfly/patternfly/assets public && cp node_modules/@patternfly/patternfly/patternfly.min.css public/patternfly.min.css && cp node_modules/@patternfly/patternfly/patternfly-addons.css public/patternfly-addons.css",
+    "copy:patternfly-assets": "mkdir -p public && cp -R node_modules/@patternfly/patternfly/assets public && cp node_modules/@patternfly/patternfly/patternfly.min.css public/patternfly.min.css && cp node_modules/@patternfly/patternfly/patternfly-addons.css public/patternfly-addons.css",
     "postinstall": "npm run copy:patternfly-assets",
     "start": "node .",
     "start:dev": "LOG_LEVEL=trace NODE_ENV=local nodemon . | pino-pretty -t",
@@ -22,14 +22,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/evanshortiss/rhmi-solution-pattern-order-management-ui.git"
+    "url": "git+https://github.com/integreatly/rhmi-solution-pattern-orders-management-ui.git"
   },
   "author": "Evan Shortiss <evanshortiss@gmail.com>",
   "license": "Apache",
   "bugs": {
-    "url": "https://github.com/evanshortiss/rhmi-solution-pattern-order-management-ui/issues"
+    "url": "https://github.com/integreatly/rhmi-solution-pattern-orders-management-ui/issues"
   },
-  "homepage": "https://github.com/evanshortiss/rhmi-solution-pattern-order-management-ui#readme",
+  "homepage": "https://github.com/integreatly/rhmi-solution-pattern-orders-management-ui#readme",
   "devDependencies": {
     "@types/express": "~4.17.1",
     "@types/node": "~12.7.12",
